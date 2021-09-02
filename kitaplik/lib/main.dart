@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kitaplik/constants.dart';
-import 'package:kitaplik/screens/about_page/about_page.dart';
+import 'package:kitaplik/routes.dart';
 import 'package:kitaplik/screens/library_page/library_page.dart';
-import 'package:kitaplik/screens/shelf_page/shelf_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +19,8 @@ class MyApp extends StatelessWidget {
       ),
       title: 'Kitapçı Burada',
       debugShowCheckedModeBanner: false,
-      home: AboutPage(),
+      initialRoute: LibraryPage.routeName,
+      routes: routes,
     );
   }
 }

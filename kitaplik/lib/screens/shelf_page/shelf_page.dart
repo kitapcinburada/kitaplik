@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:kitaplik/constants.dart';
-import 'package:kitaplik/models/book.dart';
+import 'package:kitaplik/screens/about_page/about_page.dart';
 
 class ShelfPage extends StatelessWidget {
+  static String routeName = '/ShelfPage';
   final String title;
 
   const ShelfPage({Key key, this.title}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+
+    final Map titleShelf = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
         title: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Text(
-            "Raf: $title",
+            "Raf " + titleShelf['raf'],
             style: TextStyle(fontSize: kAppBarSize),
           ),
         ),
@@ -44,7 +47,9 @@ class ShelfPage extends StatelessWidget {
             caption: 'More',
             color: kDividerColor,
             icon: Icons.more_horiz_outlined,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AboutPage.routeName);
+            },
           ),
           IconSlideAction(
             caption: 'Delete',

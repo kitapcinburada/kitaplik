@@ -21,3 +21,15 @@ const kAppBarSize = 30.0;
 const kBookSize = 20.0;
 const kAuthorSize = 18.0;
 const kPublisherSize = 16.0;
+
+const kTextStyleBold = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 18,
+);
+
+const kHeaderStyleBold = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 24,
+);
+
+const kThickness = 2.0;
